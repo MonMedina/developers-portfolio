@@ -1,0 +1,164 @@
+@import "compass/css3";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url('../img/asf.png');
+  color: #eee;
+  font: 1em 'PT Sans', sans-serif;
+}
+
+::selection {
+  background-color: #4EC6DE;
+}
+
+.tabbed {
+  width: 700px;
+  margin: 50px auto;
+}
+
+.tabbed > input {
+  display: none;
+}
+
+.capStone {
+  width: 600px;
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.h2bot {
+  margin-bottom: 35px;
+}
+
+.divide {
+  margin-bottom: 20px;
+}
+
+.demo {
+  width: 20%;
+  height: 30px;
+  border: 1px solid white;
+  background-color: Transparent;
+  color: white;
+  margin-bottom: 10%;
+}
+
+.demo:hover {
+  cursor:pointer;
+}
+
+.h1bot {
+  margin-bottom: 2px;
+}
+
+.pbot {
+  margin-bottom: 2px;
+  margin-top: 2px;
+}
+
+.pbot2 {
+  margin-bottom: 30px;
+  margin-top: 2px;
+}
+
+.tabbed > .lab {
+  display: block;
+  float: left;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+.tabbed > .lab:hover,
+.tabbed > input:checked + .lab {
+  background: #4EC6DE;
+}
+
+.tabbed > .cv:hover {
+  background: #4ddeab;
+}
+
+.tabbed > .cv {
+  display: block;
+  float: right;
+  text-align: center;
+  padding: 12px 20px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition: background-color .3s;
+}
+
+
+
+
+.tabs {
+  clear: both;
+  perspective: 600px;
+}
+
+.h3bot {
+ margin-bottom: 2px;
+
+}
+
+.skills {
+   list-style-type: none;
+   padding-left: 0;
+}
+
+.grey {
+  color: darkgrey;
+}
+
+.h4bot {
+ margin-bottom: 2px;
+ margin-top: 2px;
+
+}
+
+.tabs > div {
+  width: 700px;
+  position: absolute;
+  border: 2px solid #4EC6DE;
+  padding: 10px 30px 40px;
+  line-height: 1.4em;
+  opacity: 0;
+  transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+
+@media screen and (max-width: 700px) {
+  .tabbed { width: 400px }
+  .tabbed > .lab { display: none }
+  .tabs > div {
+    width: 400px;
+    border: none;
+    padding: 0;
+    opacity: 1;
+    position: relative;
+    transform: none;
+    margin-bottom: 60px;
+  }
+  .tabs > div h2 {
+    border-bottom: 2px solid #4EC6DE;
+    padding-bottom: .5em;
+  }
+}
